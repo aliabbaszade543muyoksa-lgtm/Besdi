@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Valeh — öz yolunu sakitliklə və inamla seçən gənc."
+    />
+    <meta name="theme-color" content="#11120f" />
+    <title>Valeh — öz yolunda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Valeh, ana səhifə">V<span>.</span></a>
+      <nav class="main-nav" aria-label="Əsas naviqasiya">
+        <a href="#haqqinda">Haqqında</a>
+        <a href="#hekayesi">Hekayəsi</a>
+        <a href="#elaqe">Əlaqə</a>
+      </nav>
+      <a class="header-link" href="#hekayesi">Onu tanı <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Bir insan. Öz yolu.</p>
+          <h1 id="hero-title">Salam,<br />mən <em>Valeh.</em></h1>
+          <p class="hero-intro">
+            Sakit görünüşümün arxasında böyük xəyallar, maraq və hər gün bir az
+            da irəli getmək həvəsi var.
+          </p>
+          <a class="round-link" href="#haqqinda">
+            <span>Məni tanı</span>
+            <span class="round-link-icon" aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-note">
+            <span class="note-mark">“</span>
+            <p>Özün olmaq — ən gözəl başlanğıcdır.</p>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="image-frame">
+            <img
+              class="portrait"
+              src="Valeh.jpeg"
+              alt="Valeh-in açıq havada çəkilmiş portreti"
+            />
+            <div class="image-wash" aria-hidden="true"></div>
+            <div class="image-caption">
+              <span>01 / 03</span>
+              <span>Öz ritmində</span>
+            </div>
+          </div>
+          <div class="vertical-label">ŞƏHƏRİN SAKİT TƏRƏFİ</div>
+          <div class="hero-index" aria-hidden="true">V—01</div>
+        </div>
+      </section>
+
+      <section class="about section-shell" id="haqqinda">
+        <div class="section-kicker"><span>01</span> HAQQINDA</div>
+        <div class="about-content">
+          <h2>Fərqli olmaq<br />üçün <em>səbəb</em> axtarmıram.</h2>
+          <div class="about-columns">
+            <p>
+              Mən Valehəm. Arıq bədən quruluşum, sakit danışığım və hər şeyi
+              diqqətlə müşahidə etməyim məni mən edən xırda detallardandır.
+              Görünüşümün arxasında isə özünə güvənən, məqsədləri olan bir insan
+              var.
+            </p>
+            <p>
+              Bu səhifə mənim haqqımdadır — sevdiyim şeylər, kiçik addımlarım və
+              hələ qarşıda olan böyük planlarım. Hər kəsin hekayəsi özünəməxsus
+              başlayır. Mənimki də elə.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="story" id="hekayesi">
+        <div class="story-image">
+          <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+            alt="Axşamüstü sakit şəhər küçəsi"
+            loading="lazy"
+          />
+        </div>
+        <div class="story-copy">
+          <div class="section-kicker"><span>02</span> MƏNİM HEKAYƏM</div>
+          <h2>Kiçik addımlar,<br /><em>böyük istiqamət.</em></h2>
+          <p>
+            Hər gün hər şeyi dəyişmək lazım deyil. Bəzən yeni bir fikir, yaxşı
+            söhbət, ya da özünə ayırdığın sakit bir saat kifayətdir. Mən öz
+            yolumu belə qururam — tələsmədən, amma dayanmayaraq.
+          </p>
+          <a class="text-link" href="#elaqe">Söhbət edək <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="closing section-shell" id="elaqe">
+        <p class="eyebrow"><span class="eyebrow-line"></span> DAVAMI GƏLƏCƏK</p>
+        <h2>Hər hekayə<br /><em>bir salamla başlayır.</em></h2>
+        <a class="contact-link" href="mailto:hello@valeh.example">
+          Mənə yaz <span aria-hidden="true">↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#top" aria-label="Səhifənin əvvəlinə qayıt">V<span>.</span></a>
+      <p>Sadəlikdə özünü tap.</p>
+      <span>© <span id="year"></span> Valeh</span>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
