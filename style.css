@@ -219,8 +219,7 @@ h2 em {
   position: relative;
 }
 
-.portrait,
-.story-image img {
+.portrait {
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -293,7 +292,6 @@ h2 em {
 }
 
 .about h2,
-.story h2,
 .closing h2 {
   font-size: clamp(38px, 5vw, 60px);
   letter-spacing: -1.8px;
@@ -307,50 +305,102 @@ h2 em {
   grid-template-columns: 1fr 1fr;
 }
 
-.about-columns p,
-.story-copy > p {
+.about-columns p {
   color: var(--muted);
   font-size: 12px;
   line-height: 2;
   margin: 0;
 }
 
-.story {
-  background: var(--surface);
+.gallery {
+  border-top: 1px solid var(--line);
+}
+
+.gallery-heading {
+  align-items: end;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  margin: 28px 0 42px;
+}
+
+.gallery-heading h2 {
+  font-size: clamp(38px, 5vw, 60px);
+  letter-spacing: -1.8px;
+  line-height: 1.16;
+  margin: 0;
+}
+
+.gallery-heading > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2;
+  margin: 0 0 5px;
+  max-width: 310px;
+}
+
+.gallery-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 510px;
+  grid-template-columns: minmax(0, 1fr);
 }
 
-.story-image {
-  min-height: 510px;
-  overflow: hidden;
+.gallery-card {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 7%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin: 0;
+  padding: 32px 0;
 }
 
-.story-image img {
-  filter: saturate(0.55) brightness(0.7);
+.gallery-card img {
+  background: var(--surface);
+  display: block;
+  filter: saturate(0.78);
+  height: min(62vw, 480px);
+  object-fit: contain;
+  transition: filter 220ms ease, transform 350ms ease;
+  width: 100%;
 }
 
-.story-copy {
-  align-self: center;
-  max-width: 580px;
-  padding: 90px 15%;
+.gallery-card:nth-child(even) img {
+  grid-column: 2;
+  grid-row: 1;
 }
 
-.story-copy .section-kicker {
-  margin-bottom: 42px;
+.gallery-card:nth-child(even) figcaption {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.story-copy h2 {
-  font-size: clamp(38px, 4vw, 54px);
+.gallery-card:hover img {
+  filter: saturate(1);
+  transform: scale(1.01);
 }
 
-.story-copy > p {
-  margin-bottom: 28px;
+.gallery-card figcaption {
+  padding: 24px 0;
 }
 
-.text-link {
+.gallery-number {
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.gallery-card h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  margin: 12px 0 7px;
+}
+
+.gallery-card figcaption p {
+  color: var(--muted);
   font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
 }
 
 .closing {
@@ -369,10 +419,19 @@ h2 em {
 }
 
 .contact-link {
-  border-bottom: 1px solid rgba(197, 167, 123, 0.5);
-  display: inline-block;
-  font-size: 12px;
-  padding: 0 0 12px;
+  align-items: center;
+  border: 1px solid rgba(197, 167, 123, 0.5);
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 14px;
+  gap: 11px;
+  padding: 13px 20px;
+}
+
+.whatsapp-icon {
+  color: #25d366;
+  height: 22px;
+  width: 22px;
 }
 
 .site-footer {
@@ -447,21 +506,26 @@ h2 em {
     margin-top: 0;
   }
 
-  .story {
-    grid-template-columns: 1fr;
+  .gallery-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 18px;
   }
 
-  .story-image {
-    min-height: 340px;
-    max-height: 420px;
+  .gallery-card {
+    gap: 5%;
   }
 
-  .story-copy {
-    padding: 65px 9%;
+  .gallery-card figcaption {
+    padding: 12px 0;
   }
 
-  .story-copy .section-kicker {
-    margin-bottom: 34px;
+  .gallery-card img {
+    height: min(70vw, 420px);
+  }
+
+  .gallery-card h3 {
+    font-size: 18px;
   }
 
   .closing {
@@ -477,7 +541,11 @@ h2 em {
   }
 
   .main-nav {
-    gap: 12px;
+    gap: 9px;
+  }
+
+  .main-nav a {
+    font-size: 9px;
   }
 
   .header-link {
@@ -487,6 +555,27 @@ h2 em {
   .about-columns {
     gap: 20px;
     grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px 0;
+  }
+
+  .gallery-card img,
+  .gallery-card:nth-child(even) img {
+    grid-column: 1;
+    grid-row: 1;
+    height: 112vw;
+    max-height: 480px;
+  }
+
+  .gallery-card figcaption,
+  .gallery-card:nth-child(even) figcaption {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 18px 0 8px;
   }
 
   .site-footer p {
